@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!--<div class="jumbotron">
+    <h1>Flask</h1>
+    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>-->
+
+
+<picture>
+    <source media="(min-width: 1400px)" srcset="/static/content/banner_g5rndb_c_scale,w_1400.jpg">
+    <source media="(min-width: 1334px)" srcset="/static/content/banner_g5rndb_c_scale,w_1334.jpg">
+    <source media="(min-width: 968px)" srcset="/static/content/banner_g5rndb_c_scale,w_968.jpg">
+    <source media="(min-width: 733px)" srcset="/static/content/banner_g5rndb_c_scale,w_733.jpg">
+    <img src="/static/content/banner_g5rndb_c_scale,w_200.jpg" alt="banner">
+</picture>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>&iquest;C&oacute;mo se define?
+        </h2>
+        <p>
+            La diabetes es una enfermedad que se presenta cuando
+            el nivel de glucosa en la sangre es demasiado alto. La glucosa en la sangre
+            es la principal fuente de energ&iacute;a y proviene de los alimentos.
+            Para ser utilizada, la insulina, una hormona que produce el p&aacute;ncreas, ayuda a que la
+            glucosa de los alimentos ingrese en las c&eacute;lulas.
+        </p>
+        <!--<p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-4">
+        <h2>Tipos de diabetes</h2>
+        <p>
+            <b>Tipo 1</b><br>El cuerpo no produce insulina o no es suficiente.<br>
+            <b>Tipo 2</b><br>El cuerpo produce insulina pero no la usa correctamente.<br>
+            <b>Gestacional</b><br>El cuerpo no gestiona de forma correcta la insulina.<br>
+            <b>Prediabetes</b><br>Aun no se considera diabetes pero los niveles de glucosa son elevados.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>&iquest;C&oacute;mo funciona?</h2>
+        <p>
+            Esta es una herramienta auxiliar que le permite obtener un porcentaje de probabilidad
+            positivo y negativo en el diagn&oacute;stico de diabetes tipo 2 mediante indicadores cl&iacute;nicos (de examen previo) o
+            indicadores personales (de estilo de vida).
+        </p>
+        
+    </div>
+</div>
+
+{% endblock %}

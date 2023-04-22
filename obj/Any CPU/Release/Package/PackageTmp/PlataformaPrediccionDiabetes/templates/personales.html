@@ -1,0 +1,426 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<!--<form method="post" action="/personales" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Indique su sexo</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="sexo" id="sexo">
+                        <option value="1">Masculino</option>
+                        <option value="0">Femenino</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Edad</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" min="18" name="edad" id="edad" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Peso (Kg)</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" step="any" min="0" name="peso" id="peso" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Estatura (m)</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" step="any" min="0" name="estatura" id="estatura" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Un medico, enfermera u otro profesional de la salud le ha dicho que tienen presion arterial alta</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="presion" id="presion">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Alguna vez le ha dicho un medico, enfermera u otro profesional de la salud que su nivel de colesterol en la sangre es alto</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="colesterol" id="colesterol">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Ha fumado al menos 100 cigarrillos en toda su vida</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="fumador" id="fumador">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Ha sufrido un derrame cerebral</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="derrame" id="derrame">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Tiene una enfermedad coronaria (CHD) o infarto de miocardio (MI)</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="corazon" id="corazon">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Ha practicado ejercicio en los ultimos 30 dias</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="ejercicio" id="ejercicio">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Consumo excesivo de alcohol (Hombres: mas de 14 bebidas a la semana - Mujeres: mas de 7 bebidas a la semana)</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="alcohol" id="alcohol">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>Como describe su salud general</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="saludgen" id="saludgen">
+                        <option value="1">EXCELENTE</option>
+                        <option value="2">MUY BUENA</option>
+                        <option value="3">BUENA</option>
+                        <option value="4">JUSTA</option>
+                        <option value="5">MALA</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>En relacion a su salud mental, que incluye estres, depresion y problemas con las emociones, durante cuantos dias durante los ultimos 30 dias su salud mental no fue buena</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="saludmen" id="saludmen">
+                        <option value="0">0 dias</option>
+                        <option value="1">1 dia</option>
+                        <option value="2">2 dias</option>
+                        <option value="3">3 dias</option>
+                        <option value="4">4 dias</option>
+                        <option value="5">5 dias</option>
+                        <option value="6">6 dias</option>
+                        <option value="7">7 dias</option>
+                        <option value="8">8 dias</option>
+                        <option value="9">9 dias</option>
+                        <option value="10">10 dias</option>
+                        <option value="11">11 dias</option>
+                        <option value="12">12 dias</option>
+                        <option value="13">13 dias</option>
+                        <option value="14">14 dias</option>
+                        <option value="15">15 dias</option>
+                        <option value="16">16 dias</option>
+                        <option value="17">17 dias</option>
+                        <option value="18">18 dias</option>
+                        <option value="19">19 dias</option>
+                        <option value="20">20 dias</option>
+                        <option value="21">21 dias</option>
+                        <option value="22">22 dias</option>
+                        <option value="23">23 dias</option>
+                        <option value="24">24 dias</option>
+                        <option value="25">25 dias</option>
+                        <option value="26">26 dias</option>
+                        <option value="27">27 dias</option>
+                        <option value="28">28 dias</option>
+                        <option value="29">29 dias</option>
+                        <option value="30">30 dias</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label>En relacion a su salud fisica, que incluye enfermedades fisicas y lesiones, durante cuantos dias durante los ultimos 30 dias su salud fisica no fue buena</label>
+                </div>
+                <div class="col-md-6">
+                    <select name="saludfis" id="saludfis">
+                        <option value="0">0 dias</option>
+                        <option value="1">1 dia</option>
+                        <option value="2">2 dias</option>
+                        <option value="3">3 dias</option>
+                        <option value="4">4 dias</option>
+                        <option value="5">5 dias</option>
+                        <option value="6">6 dias</option>
+                        <option value="7">7 dias</option>
+                        <option value="8">8 dias</option>
+                        <option value="9">9 dias</option>
+                        <option value="10">10 dias</option>
+                        <option value="11">11 dias</option>
+                        <option value="12">12 dias</option>
+                        <option value="13">13 dias</option>
+                        <option value="14">14 dias</option>
+                        <option value="15">15 dias</option>
+                        <option value="16">16 dias</option>
+                        <option value="17">17 dias</option>
+                        <option value="18">18 dias</option>
+                        <option value="19">19 dias</option>
+                        <option value="20">20 dias</option>
+                        <option value="21">21 dias</option>
+                        <option value="22">22 dias</option>
+                        <option value="23">23 dias</option>
+                        <option value="24">24 dias</option>
+                        <option value="25">25 dias</option>
+                        <option value="26">26 dias</option>
+                        <option value="27">27 dias</option>
+                        <option value="28">28 dias</option>
+                        <option value="29">29 dias</option>
+                        <option value="30">30 dias</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <input type="submit" value="Predecir" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>-->
+
+
+
+
+
+
+<form method="post" action="/personales" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo" class="form-control">
+                <option value="0" selected>Femenino</option>
+                <option value="1">Masculino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" min="18" class="form-control" id="edad" name="edad">
+        </div>
+        <div class="form-group">
+            <label for="peso">Peso (Kg)</label>
+            <input type="number" step="0.01" min="0" class="form-control" id="peso" name="peso" placeholder="64.7">
+        </div>
+        <div class="form-group">
+            <label for="estatura">Estatura (m)</label>
+            <input type="number" step="0.01" min="0" class="form-control" id="estatura" name="estatura" placeholder="1.68">
+        </div>
+   
+        <div class="form-group">
+            <label for="presion">Un medico, enfermera u otro profesional de la salud le ha dicho que tienen presion arterial alta</label>
+            <select name="presion" id="presion" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="colesterol">Alguna vez le ha dicho un medico, enfermera u otro profesional de la salud que su nivel de colesterol en la sangre es alto</label>
+            <select name="colesterol" id="colesterol" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fumador">Ha fumado al menos 100 cigarrillos en toda su vida</label>
+            <select name="fumador" id="fumador" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="derrame">Ha sufrido un derrame cerebral</label>
+            <select name="derrame" id="derrame" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="corazon">Tiene una enfermedad coronaria (CHD) o infarto de miocardio (MI)</label>
+            <select name="corazon" id="corazon" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ejercicio">Ha practicado ejercicio en los ultimos 30 dias</label>
+            <select name="ejercicio" id="ejercicio" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="alcohol">Consumo excesivo de alcohol (Hombres: mas de 14 bebidas a la semana - Mujeres: mas de 7 bebidas a la semana)</label>
+            <select name="alcohol" id="alcohol" class="form-control">
+                <option value="0" selected>NO</option>
+                <option value="1">SI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="saludgen">Describa su salud general</label>
+            <select name="saludgen" id="saludgen" class="form-control">
+                <option value="1">EXCELENTE</option>
+                <option value="2">MUY BUENA</option>
+                <option value="3">BUENA</option>
+                <option value="4">JUSTA</option>
+                <option value="5">MALA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="saludmen">En relacion a su salud mental, que incluye estres, depresion y problemas con las emociones, durante cuantos dias durante los ultimos 30 dias su salud mental no fue buena</label>
+            <select name="saludmen" id="saludmen" class="form-control">
+                <option value="0">0 dias</option>
+                <option value="1">1 dia</option>
+                <option value="2">2 dias</option>
+                <option value="3">3 dias</option>
+                <option value="4">4 dias</option>
+                <option value="5">5 dias</option>
+                <option value="6">6 dias</option>
+                <option value="7">7 dias</option>
+                <option value="8">8 dias</option>
+                <option value="9">9 dias</option>
+                <option value="10">10 dias</option>
+                <option value="11">11 dias</option>
+                <option value="12">12 dias</option>
+                <option value="13">13 dias</option>
+                <option value="14">14 dias</option>
+                <option value="15">15 dias</option>
+                <option value="16">16 dias</option>
+                <option value="17">17 dias</option>
+                <option value="18">18 dias</option>
+                <option value="19">19 dias</option>
+                <option value="20">20 dias</option>
+                <option value="21">21 dias</option>
+                <option value="22">22 dias</option>
+                <option value="23">23 dias</option>
+                <option value="24">24 dias</option>
+                <option value="25">25 dias</option>
+                <option value="26">26 dias</option>
+                <option value="27">27 dias</option>
+                <option value="28">28 dias</option>
+                <option value="29">29 dias</option>
+                <option value="30">30 dias</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="saludfis">En relacion a su salud fisica, que incluye enfermedades fisicas y lesiones, durante cuantos dias durante los ultimos 30 dias su salud fisica no fue buena</label>
+            <select name="saludfis" id="saludfis" class="form-control">
+                <option value="0">0 dias</option>
+                <option value="1">1 dia</option>
+                <option value="2">2 dias</option>
+                <option value="3">3 dias</option>
+                <option value="4">4 dias</option>
+                <option value="5">5 dias</option>
+                <option value="6">6 dias</option>
+                <option value="7">7 dias</option>
+                <option value="8">8 dias</option>
+                <option value="9">9 dias</option>
+                <option value="10">10 dias</option>
+                <option value="11">11 dias</option>
+                <option value="12">12 dias</option>
+                <option value="13">13 dias</option>
+                <option value="14">14 dias</option>
+                <option value="15">15 dias</option>
+                <option value="16">16 dias</option>
+                <option value="17">17 dias</option>
+                <option value="18">18 dias</option>
+                <option value="19">19 dias</option>
+                <option value="20">20 dias</option>
+                <option value="21">21 dias</option>
+                <option value="22">22 dias</option>
+                <option value="23">23 dias</option>
+                <option value="24">24 dias</option>
+                <option value="25">25 dias</option>
+                <option value="26">26 dias</option>
+                <option value="27">27 dias</option>
+                <option value="28">28 dias</option>
+                <option value="29">29 dias</option>
+                <option value="30">30 dias</option>
+            </select>
+        </div>
+
+    <div class="form-group">
+
+                <input type="submit" value="Predecir" class="btn btn-primary" />
+            
+        
+    </div>
+</form>
+
+
+
+{% endblock %}
